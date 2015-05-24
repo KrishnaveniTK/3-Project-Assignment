@@ -21,13 +21,6 @@ xx<-rbind(x_test,x_train)
 yy<-rbind(y_test,y_train)
 subject<-rbind(subject_test,subject_train)
 
-## clear workspace
-# rm("x_train")
-# rm("y_train")
-# rm("x_test")
-# rm("y_test")
-# rm("subject_train")
-# rm("subject_test")
 
 # read features.txt
 features<-read.table("features.txt",header=FALSE)
