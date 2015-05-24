@@ -47,15 +47,6 @@ xx1<-xx[,gpat]
 #prepare one dataset from x, y and subject datasets
 tt<-data.table(subject,yy,xx1)
 
-## clear workspace
-# rm("xx")
-# rm("yy")
-# rm("xx1")
-# rm("subject")
-# rm("gpat")
-# rm("pat")
-# rm("features")
-
 
 # Step3 Use descriptive activity names to name the activities in the data set
 # Step4 Appropriate labels to the data set with descriptive variable names
@@ -83,13 +74,10 @@ for (i in 1 : (length(tt_tbl)-3)){
 heading1[i]<-stri_replace_all_fixed(heading[i],patterns,replacements,vectorize_all=FALSE)
 }
 
-# setnames(tt_tbl,3:length(tt_tbl),heading1)
-# setorder(tt_tbl,"Subject","ActNum")
-
-
 
 final<-tt_tbl%>%
   select(2:length(names(tt_tbl)))
+
 ## set the lables, details of the labels in the CookBook.md
 setnames(final,3:length(final),heading1)
 
